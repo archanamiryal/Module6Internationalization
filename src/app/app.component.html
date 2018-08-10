@@ -1,0 +1,15 @@
+<div class="container">
+  <h4>{{today | date:'MM/dd/yyyy HH:mm a'}}</h4>
+  <div class="btn-group">
+    <button *ngFor="let lang of langs"
+      (click)="selectLang(lang.value)"
+      class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
+      {{ lang.display }}
+    </button>
+  </div>
+  <div style="margin-top: 20px">
+    <p>
+      {{ dateLabel | translate }}: <strong>{{today | date:'MM/dd/yyyy HH:mm a'}}</strong>
+    </p>
+  </div>
+</div>
